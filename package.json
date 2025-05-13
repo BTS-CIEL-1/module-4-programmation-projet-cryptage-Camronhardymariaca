@@ -1,0 +1,14 @@
+{
+  "name": "cyberworld-cryptage",
+  "version": "1.0.0",
+  "description": "Simulateur de cryptage CyberWorld",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "author": "Makhlouf",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

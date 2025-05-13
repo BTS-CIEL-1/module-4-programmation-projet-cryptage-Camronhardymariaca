@@ -1,0 +1,248 @@
+/* Arrière-plan animé et police */
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top left, #001f33, #000d1a);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #00ffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Barre de navigation */
+nav {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #000d1a;
+  box-shadow: 0 0 12px #00ffff55;
+}
+
+nav img {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+nav span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0ff;
+}
+
+/* Contenu principal centré */
+.content {
+  max-width: 800px;
+  width: 90%;
+  margin: 60px auto;
+  padding: 40px;
+  border-radius: 18px;
+  background: rgba(10, 20, 30, 0.92);
+  box-shadow: 0 0 35px #00ffff44;
+  text-align: center;
+  font-size: 18px;
+  flex-grow: 1;
+}
+
+.content h1 {
+  color: #00ffff;
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+/* Formulaire */
+.crypto-box label {
+  display: block;
+  text-align: left;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.crypto-box textarea,
+.crypto-box input {
+  width: 100%;
+  background: #000000cc;
+  color: #0ff;
+  border: 1px solid #00ffff55;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 5px;
+  box-shadow: inset 0 0 6px #00ffff33;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* Boutons */
+.btn-group {
+  margin-top: 25px;
+}
+
+.btn-group button {
+  background: #00ffff22;
+  color: #00ffff;
+  border: 1px solid #00ffff55;
+  padding: 12px 28px;
+  margin: 5px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-group button:hover {
+  background: #00ffff55;
+  color: #000;
+  box-shadow: 0 0 12px #00ffff;
+}
+
+/* Résultat */
+.output {
+  margin-top: 30px;
+  background: #0a1f2f;
+  border: 1px dashed #00ffff88;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Pied de page */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #000d1a;
+  color: #00ffffcc;
+  border-top: 1px solid #00ffff33;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+footer a {
+  color: #00ffff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+/* NAVIGATION - Menu Responsive */
+.menu-toggle {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #00ffffcc;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: 0.3s;
+}
+
+.menu-toggle:hover {
+  color: #00ffff;
+}
+
+.menu-links {
+  display: flex;
+  gap: 15px;
+  margin-left: 20px;
+}
+
+.menu-links a {
+  color: #c0b8ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.menu-links a:hover {
+  color: #00ffff;
+}
+
+/* Si tu veux rendre le menu responsive plus tard */
+@media screen and (max-width: 600px) {
+  .menu-links {
+    display: none;
+    flex-direction: column;
+    background-color: #001f33;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .menu-links.show {
+    display: flex;
+  }
+}
+.info-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.info-content {
+  background: #001f2f;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 500px;
+  color: #0ff;
+  text-align: center;
+  box-shadow: 0 0 20px #00ffffaa;
+}
+
+.info-content button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #00ffff22;
+  color: #00ffff;
+  border: 1px solid #00ffff88;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.info-content button:hover {
+  background: #00ffff;
+  color: #001f2f;
+}
+
+.menu-toggle {
+  margin-left: auto;
+  background-color: #001f33;
+  border: 2px solid #00ffff88;
+  border-radius: 50%;
+  color: #00ffff;
+  font-size: 22px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 8px #00ffff55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-toggle:hover {
+  background-color: #00ffff;
+  color: #000d1a;
+  box-shadow: 0 0 12px #00ffff;
+}

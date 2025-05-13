@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crypter | CyberWorld</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <nav>
+    <img src="/images/logo-cyberworld.png" alt="CyberWorld Logo" />
+    <span>CyberWorld</span>
+    <button class="menu-toggle" onclick="toggleInfo()">❗</button>
+    <div class="menu-links" id="menuLinks">
+      <a href="/html/crypter.html">Crypter</a>
+      <a href="/html/decrypter.html">Décrypter</a>
+    </div>
+  </nav>
+
+  <div class="content">
+    <h1>Simulateur de Cryptage</h1>
+    <div class="crypto-box">
+      <label for="message">Message à crypter :</label>
+      <textarea id="message" placeholder="Tape ton message ici..."></textarea>
+
+      <label for="key">Clé de cryptage (nombre) :</label>
+      <input type="number" id="key" placeholder="Ex : 3" />
+
+      <div class="btn-group">
+        <button onclick="crypter()">Crypter</button>
+      </div>
+
+      <div class="output">
+        <p><strong>Résultat :</strong></p>
+        <p id="resultat">Aucun résultat pour le moment.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Projet réalisé par <strong>Makhlouf, Macire et Camron</strong><br />
+    📧 Contact : <a href="mailto:makhlouf.bouferguene@lycee-jeanrostand.fr">makhlouf.bouferguene@lycee-jeanrostand.fr</a>
+  </footer>
+
+  <!-- Panneau d'info -->
+  <div class="info-panel" id="infoPanel">
+    <div class="info-content">
+      <h2>À propos du site</h2>
+      <p>Ce site permet de crypter un texte avec une clé. Chaque lettre est décalée selon la clé choisie (type César).</p>
+      <p>Pour décrypter, utilisez la même clé sur la page dédiée.</p>
+      <button onclick="closeInfo()">Fermer</button>
+    </div>
+  </div>
+
+  <script src="/js/crypter.js"></script>
+</body>
+</html>
