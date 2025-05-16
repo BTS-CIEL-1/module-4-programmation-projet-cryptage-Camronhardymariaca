@@ -11,10 +11,11 @@
     <span>CyberWorld</span>
     <button class="menu-toggle" onclick="toggleInfo()">❗</button>
     <div class="menu-links" id="menuLinks">
-      <a href="/html/crypter.html">Crypter</a>
-      <a href="/html/decrypter.html">Décrypter</a>
-    </div>
-  </nav>
+  <a href="/html/crypter.html">🔒 Crypter Texte</a>
+  <a href="/html/decrypter.html">🔓 Décrypter Texte</a>
+  <a href="/html/cle.html">🔑 Clés Crypto</a>
+</div>
+   </nav>
 
   <div class="content">
     <h1>Simulateur de Cryptage</h1>
@@ -36,20 +37,41 @@
     </div>
   </div>
 
-  <footer>
-    Projet réalisé par <strong>Makhlouf, Macire et Camron</strong><br />
-    📧 Contact : <a href="mailto:makhlouf.bouferguene@lycee-jeanrostand.fr">makhlouf.bouferguene@lycee-jeanrostand.fr</a>
-  </footer>
+  <!-- Module Image -->
+  <div class="content">
+    <h2>🖼️ Crypter une image (Base64)</h2>
+    <label for="imageInput" class="custom-file-label">📁 Choisir une image</label>
+    <input type="file" id="imageInput" accept="image/*" onchange="afficherNomFichier()" />
+    <span id="nomFichier">Aucun fichier choisi</span>
 
-  <!-- Panneau d'info -->
-  <div class="info-panel" id="infoPanel">
-    <div class="info-content">
-      <h2>À propos du site</h2>
-      <p>Ce site permet de crypter un texte avec une clé. Chaque lettre est décalée selon la clé choisie (type César).</p>
-      <p>Pour décrypter, utilisez la même clé sur la page dédiée.</p>
+    <div class="btn-group">
+      <button onclick="convertToBase64()">Crypter l'image</button>
+      <button onclick="afficherImage()">Afficher l'image</button>
+    </div>
+
+    <textarea id="base64Output" class="textarea-base64" placeholder="Base64 ici..."></textarea>
+
+    <div class="output">
+      <p><strong>Image :</strong></p>
+      <img id="imageAffichee" style="max-width: 100%; border-radius: 10px;" />
+    </div>
+  </div>
+
+  <!-- Info modale -->
+  <div class="info-modal" id="infoPanel">
+    <div class="info-modal-content">
+      <h3>À propos du site</h3>
+      <p>
+        🔐 Ce site te permet de crypter un message (type César) avec une clé numérique, ou de convertir une image en base64.
+      </p>
       <button onclick="closeInfo()">Fermer</button>
     </div>
   </div>
+
+  <footer>
+    Projet réalisé par <strong>Makhlouf, Macire et Camron</strong><br />
+    📧 <a href="mailto:makhlouf.bouferguene@lycee-jeanrostand.fr">makhlouf.bouferguene@lycee-jeanrostand.fr</a>
+  </footer>
 
   <script src="/js/crypter.js"></script>
 </body>

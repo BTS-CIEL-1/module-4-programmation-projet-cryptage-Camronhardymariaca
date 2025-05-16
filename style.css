@@ -1,155 +1,45 @@
-/* Arrière-plan animé et police */
+/* === Fond sobre et neutre === */
 body {
   margin: 0;
   padding: 0;
-  background: radial-gradient(circle at top left, #001f33, #000d1a);
-  background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
+  background-color: #1e1e2f; /* gris bleu foncé sobre */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #00ffff;
+  color: #f0f0f0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-@keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Barre de navigation */
+/* === Navigation === */
 nav {
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  background-color: #000d1a;
-  box-shadow: 0 0 12px #00ffff55;
+  background-color: #2b2b3d;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 nav img {
-  width: 40px;
-  height: auto;
-  margin-right: 10px;
+  width: 36px;
+  margin-right: 12px;
 }
 
 nav span {
   font-size: 20px;
   font-weight: bold;
-  color: #0ff;
+  color: #ffffff;
 }
 
-/* Contenu principal centré */
-.content {
-  max-width: 800px;
-  width: 90%;
-  margin: 60px auto;
-  padding: 40px;
-  border-radius: 18px;
-  background: rgba(10, 20, 30, 0.92);
-  box-shadow: 0 0 35px #00ffff44;
-  text-align: center;
-  font-size: 18px;
-  flex-grow: 1;
-}
-
-.content h1 {
-  color: #00ffff;
-  margin-bottom: 30px;
-  font-size: 30px;
-}
-
-/* Formulaire */
-.crypto-box label {
-  display: block;
-  text-align: left;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-.crypto-box textarea,
-.crypto-box input {
-  width: 100%;
-  background: #000000cc;
-  color: #0ff;
-  border: 1px solid #00ffff55;
-  border-radius: 8px;
-  padding: 12px;
-  font-size: 16px;
-  margin-top: 5px;
-  box-shadow: inset 0 0 6px #00ffff33;
-}
-
-textarea {
-  height: 100px;
-  resize: none;
-}
-
-/* Boutons */
-.btn-group {
-  margin-top: 25px;
-}
-
-.btn-group button {
-  background: #00ffff22;
-  color: #00ffff;
-  border: 1px solid #00ffff55;
-  padding: 12px 28px;
-  margin: 5px;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.btn-group button:hover {
-  background: #00ffff55;
-  color: #000;
-  box-shadow: 0 0 12px #00ffff;
-}
-
-/* Résultat */
-.output {
-  margin-top: 30px;
-  background: #0a1f2f;
-  border: 1px dashed #00ffff88;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-/* Pied de page */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #000d1a;
-  color: #00ffffcc;
-  border-top: 1px solid #00ffff33;
-  font-size: 14px;
-  margin-top: auto;
-}
-
-footer a {
-  color: #00ffff;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-/* NAVIGATION - Menu Responsive */
 .menu-toggle {
   margin-left: auto;
-  background: none;
+  background-color: transparent;
   border: none;
-  color: #00ffffcc;
+  color: #ffffffcc;
   font-size: 22px;
   cursor: pointer;
-  padding: 5px 10px;
-  transition: 0.3s;
-}
-
-.menu-toggle:hover {
-  color: #00ffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu-links {
@@ -159,90 +49,296 @@ footer a:hover {
 }
 
 .menu-links a {
-  color: #c0b8ff;
+  color: #ccccff;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.2s;
 }
 
 .menu-links a:hover {
-  color: #00ffff;
+  color: #ffffff;
 }
 
-/* Si tu veux rendre le menu responsive plus tard */
-@media screen and (max-width: 600px) {
-  .menu-links {
-    display: none;
-    flex-direction: column;
-    background-color: #001f33;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    padding: 10px;
-    border-radius: 10px;
-  }
-
-  .menu-links.show {
-    display: flex;
-  }
+/* === Bloc central === */
+.content {
+  max-width: 800px;
+  width: 90%;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  background: #2a2a3c;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
-.info-panel {
-  position: fixed;
-  top: 0;
-  left: 0;
+
+.content h1, .content h2 {
+  color: #ffffff;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+/* === Formulaires === */
+.crypto-box label {
+  display: block;
+  text-align: left;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #ddd;
+}
+
+.crypto-box textarea,
+.crypto-box input {
   width: 100%;
-  height: 100%;
+  background: #1c1c2a;
+  color: #e0e0e0;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.textarea-base64 {
+  width: 100%;
+  height: 120px;
+  background-color: #1c1c2a;
+  color: #ddd;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 15px 0;
+  resize: none;
+}
+
+/* === Boutons === */
+.btn-group {
+  margin-top: 20px;
+}
+
+.btn-group button {
+  background-color: #3a3a50;
+  color: #f0f0f0;
+  border: none;
+  padding: 10px 24px;
+  margin: 5px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-group button:hover {
+  background-color: #5b5b78;
+}
+
+/* === Fichier input stylé === */
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-label {
+  display: inline-block;
+  background-color: #3a3a50;
+  color: #e0e0e0;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.custom-file-label:hover {
+  background-color: #5b5b78;
+}
+
+#nomFichier {
+  margin-left: 10px;
+  color: #bbb;
+  font-style: italic;
+}
+
+/* === Résultat / image === */
+.output {
+  margin-top: 20px;
+  background-color: #1f1f2e;
+  padding: 20px;
+  border-radius: 10px;
+  color: #eee;
+  border: 1px solid #333;
+}
+
+.output img {
+  margin-top: 10px;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #2b2b3d;
+  color: #bbbbbb;
+  border-top: 1px solid #444;
+  font-size: 14px;
+  margin-top: auto;
+}
+footer a {
+  color: #bbbbbb;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+
+
+/* === Modale Info === */
+.info-modal {
+  position: fixed;
+  top: 0; left: 0;
+  height: 100vh;
+  width: 100vw;
   background: rgba(0, 0, 0, 0.85);
   display: none;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   z-index: 999;
 }
 
-.info-content {
-  background: #001f2f;
+.info-modal-content {
+  background: #2e2e40;
   padding: 30px;
-  border-radius: 15px;
+  border-radius: 12px;
+  color: #ffffff;
+  box-shadow: 0 0 25px #00000066;
   max-width: 500px;
-  color: #0ff;
   text-align: center;
-  box-shadow: 0 0 20px #00ffffaa;
 }
 
-.info-content button {
+.info-modal-content button {
   margin-top: 20px;
   padding: 10px 20px;
-  background: #00ffff22;
-  color: #00ffff;
-  border: 1px solid #00ffff88;
+  background: #3a3a50;
+  color: #ffffff;
+  border: none;
   border-radius: 8px;
   cursor: pointer;
 }
 
-.info-content button:hover {
-  background: #00ffff;
-  color: #001f2f;
+.info-modal-content button:hover {
+  background: #5b5b78;
+}
+.section-spacing {
+  margin-top: 60px;
+}
+/* === RSA Section Assombrie et Harmonisée === */
+.rsa-section {
+  background: #191827;
+  box-shadow: 0 0 15px #3dd9ff20;
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 60px;
+  color: #ccefff;
+  text-align: center;
+  max-width: 700px;
+  margin-inline: auto;
+  border: 1px solid #3dd9ff15;
 }
 
-.menu-toggle {
-  margin-left: auto;
-  background-color: #001f33;
-  border: 2px solid #00ffff88;
-  border-radius: 50%;
-  color: #00ffff;
-  font-size: 22px;
-  width: 40px;
-  height: 40px;
+.rsa-section h2 {
+  color: #70e3ff;
+  margin-bottom: 25px;
+  font-size: 23px;
+  text-shadow: none;
+}
+
+/* Zone de texte */
+.rsa-keys textarea,
+.rsa-message textarea {
+  width: 100%;
+  background: #0e1526;
+  color: #d0f0ff;
+  border: 1px solid #3dd9ff30;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px;
+  margin: 12px 0;
+  resize: none;
+  font-family: 'Courier New', monospace;
+  box-shadow: inset 0 0 4px #3dd9ff20;
+}
+
+/* Résultat */
+.rsa-result {
+  background: #121926;
+  border: 1px dashed #3dd9ff44;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 30px;
+  color: #b0eaff;
+  text-align: center;
+}
+
+/* Bouton Télécharger */
+.btn-download {
+  margin-top: 15px;
+  padding: 8px 18px;
+  background-color: #1e2b3c;
+  color: #bbbbbb;
+  border: 1px solid #bbbbbb;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.btn-download:hover {
+  background-color: #3dd9ff;
+  color: #1e2b3c;
+}
+
+/* Boutons crypter/décrypter */
+.rsa-section .btn-group button {
+  margin: 10px;
+  background-color: #232232;
+  border: 1px solid #3dd9ff44;
+  color: #b0eaff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.rsa-section .btn-group button:hover {
+  background-color: #3dd9ff;
+  color: #141422;
+  box-shadow: 0 0 6px #3dd9ff77;
+}
+.generate-btn {
+  background-color: #3a3a50;
+  color: #ffffff;
+  border: 1px solid #555;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 8px;
   cursor: pointer;
   transition: 0.3s ease;
-  box-shadow: 0 0 8px #00ffff55;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 8px;
 }
 
-.menu-toggle:hover {
-  background-color: #00ffff;
-  color: #000d1a;
-  box-shadow: 0 0 12px #00ffff;
+.generate-btn:hover {
+  background-color: #5b5b78;
+  border-color: #777;
+}
+
+/* Icône style optionnel */
+.generate-btn i {
+  font-size: 16px;
 }

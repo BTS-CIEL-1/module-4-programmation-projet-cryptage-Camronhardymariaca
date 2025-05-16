@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Clés Crypto | CyberWorld</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <nav>
+    <img src="/images/logo-cyberworld.png" alt="CyberWorld Logo" />
+    <span>CyberWorld</span>
+    <button class="menu-toggle" onclick="toggleInfo()">❗</button>
+    <div class="menu-links" id="menuLinks">
+      <a href="/html/crypter.html">🔐 Crypter Texte</a>
+      <a href="/html/decrypter.html">🔓 Décrypter Texte</a>
+      <a href="/html/cle.html">🔑 Clés Crypto</a>
+    </div>
+  </nav>
+
+  <div class="content">
+    <h1>🔑 Clé Symétrique vs Asymétrique</h1>
+    <div class="crypto-info">
+      <div class="crypto-type">
+        <h3>🔒 Clé Symétrique</h3>
+        <p>Une seule clé est utilisée pour crypter et décrypter.</p>
+        <p>Exemple : chiffrement AES ou César.</p>
+      </div>
+      <div class="crypto-type">
+        <h3>🔐 Clé Asymétrique</h3>
+        <p>Utilise une clé publique pour crypter et une clé privée pour décrypter.</p>
+        <p>Exemple : utilisé dans HTTPS ou les e-mails sécurisés.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bloc Symétrique AES -->
+  <div class="content crypto-box">
+    <h2>🔐 Démo de Clé Symétrique (AES)</h2>
+
+    <label for="messageAES">Message :</label>
+    <textarea id="messageAES" placeholder="Tape ton message ou colle du texte crypté..."></textarea>
+
+    <label for="keyAES">Clé secrète :</label>
+    <input type="text" id="keyAES" placeholder="Ex : azerty123" />
+
+    <div class="btn-group">
+      <button onclick="crypterAES()">Crypter</button>
+      <button onclick="decrypterAES()">Décrypter</button>
+    </div>
+
+    <div class="output">
+      <p><strong>Résultat :</strong></p>
+      <p id="resultAES">...</p>
+      <button onclick="telechargerFichier('resultAES', 'message_AES.txt')" class="btn-download">📁 Télécharger</button>
+    </div>
+  </div>
+
+  <!-- Bloc Asymétrique RSA -->
+  <div class="content crypto-box">
+    <h2>🔐 Démo de Clé Asymétrique (RSA simplifié)</h2>
+
+    <button onclick="genererCle()" class="generate-btn">
+  <i>🔧</i> Générer une paire de clés
+</button>
+
+
+    <label for="clePublique">Clé publique :</label>
+    <textarea id="clePublique" readonly></textarea>
+
+    <label for="clePrivee">Clé privée :</label>
+    <textarea id="clePrivee" readonly></textarea>
+
+    <label for="rsaMessage">Message :</label>
+    <textarea id="rsaMessage" placeholder="Message à chiffrer ou décrypter..."></textarea>
+
+    <div class="btn-group">
+      <button onclick="chiffrerRSA()">Crypter</button>
+      <button onclick="dechiffrerRSA()">Décrypter</button>
+    </div>
+
+    <div class="output">
+      <p><strong>Résultat :</strong></p>
+      <p id="resultRSA">...</p>
+      <button onclick="telechargerFichier('resultRSA', 'message_RSA.txt')" class="btn-download">📁 Télécharger</button>
+    </div>
+  </div>
+
+  <div class="info-modal" id="infoPanel">
+    <div class="info-modal-content">
+      <h3>À propos</h3>
+      <p>
+        Ce site permet de tester le chiffrement symétrique (AES) et asymétrique (RSA simplifié).
+      </p>
+      <button onclick="closeInfo()">Fermer</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-mail" </class>
+    Projet réalisé par <strong>Makhlouf, Macire et Camron</strong><br />
+    📧 <a href="mailto:makhlouf.bouferguene@lycee-jeanrostand.fr">
+      makhlouf.bouferguene@lycee-jeanrostand.fr
+    </a>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script src="/js/cle.js"></script>
+</body>
+</html>
