@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Connexion | CyberWorld</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <img src="/images/logo-cyberworld.png" alt="CyberWorld Logo" />
+    <span>CyberWorld</span>
+    <button class="menu-toggle" onclick="toggleInfo()">❗</button>
+    <div class="menu-links" id="menuLinks">
+      <a href="/html/crypter.html">🔐 Crypter Texte</a>
+      <a href="/html/decrypter.html">🔓 Décrypter Texte</a>
+      <a href="/html/cle.html">🔑 Clés Crypto</a>
+      <a href="/html/auth.html">👤 Connexion</a>
+    </div>
+  </nav>
+
+  <!-- Formulaire Auth -->
+  <div class="auth-container">
+    <!-- Sign Up -->
+    <div class="form-box" id="signup-form">
+      <h2>Créer un compte</h2>
+      <input type="email" id="signupEmail" placeholder="Email" required />
+      <input type="password" id="signupPassword" placeholder="Mot de passe" required />
+      <button type="button" onclick="signUp()">S'inscrire</button>
+      <div class="switch">Déjà inscrit ? <a href="#" onclick="toggleForms()">Se connecter</a></div>
+    </div>
+
+    <!-- Sign In -->
+    <div class="form-box" id="signin-form" style="display:none;">
+      <h2>Connexion</h2>
+      <input type="email" id="signinEmail" placeholder="Email" required />
+      <input type="password" id="signinPassword" placeholder="Mot de passe" required />
+      <button type="button" onclick="signIn()">Se connecter</button>
+      <div class="switch">Pas encore de compte ? <a href="#" onclick="toggleForms()">S'inscrire</a></div>
+    </div>
+  </div>
+
+  <!-- Modale Info -->
+  <div class="info-modal" id="infoPanel">
+    <div class="info-modal-content">
+      <h3>À propos</h3>
+      <p>Ce site permet de tester le chiffrement, le déchiffrement, et maintenant l'authentification utilisateur via MongoDB !</p>
+      <button onclick="closeInfo()">Fermer</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    Projet réalisé par <strong>Makhlouf, Macire et Camron</strong><br />
+    📧 <a href="mailto:makhlouf.bouferguene@lycee-jeanrostand.fr">makhlouf.bouferguene@lycee-jeanrostand.fr</a>
+  </footer>
+
+  <!-- Script Authentification -->
+  <script src="/js/auth.js"></script>
+</body>
+</html>

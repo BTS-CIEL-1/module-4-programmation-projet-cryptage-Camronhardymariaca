@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <title>Clés Crypto | CyberWorld</title>
   <link rel="stylesheet" href="/style.css" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#007acc" />
 </head>
 <body>
   <nav>
@@ -14,6 +16,7 @@
       <a href="/html/crypter.html">🔐 Crypter Texte</a>
       <a href="/html/decrypter.html">🔓 Décrypter Texte</a>
       <a href="/html/cle.html">🔑 Clés Crypto</a>
+      <a href="/html/auth.html">👤 Connexion</a>
     </div>
   </nav>
 
@@ -35,7 +38,7 @@
 
   <!-- Bloc Symétrique AES -->
   <div class="content crypto-box">
-    <h2>🔐 Démo de Clé Symétrique (AES)</h2>
+    <h2>🔐 Clé Symétrique</h2>
 
     <label for="messageAES">Message :</label>
     <textarea id="messageAES" placeholder="Tape ton message ou colle du texte crypté..."></textarea>
@@ -52,17 +55,17 @@
       <p><strong>Résultat :</strong></p>
       <p id="resultAES">...</p>
       <button onclick="telechargerFichier('resultAES', 'message_AES.txt')" class="btn-download">📁 Télécharger</button>
+      <button onclick="envoyerCleParMail()" class="btn-download">📧 Envoyer la clé par mail</button>
     </div>
   </div>
 
   <!-- Bloc Asymétrique RSA -->
   <div class="content crypto-box">
-    <h2>🔐 Démo de Clé Asymétrique (RSA simplifié)</h2>
+    <h2>🔐 Clé Asymétrique</h2>
 
     <button onclick="genererCle()" class="generate-btn">
-  <i>🔧</i> Générer une paire de clés
-</button>
-
+      <i>🔧</i> Générer une paire de clés
+    </button>
 
     <label for="clePublique">Clé publique :</label>
     <textarea id="clePublique" readonly></textarea>
@@ -82,28 +85,28 @@
       <p><strong>Résultat :</strong></p>
       <p id="resultRSA">...</p>
       <button onclick="telechargerFichier('resultRSA', 'message_RSA.txt')" class="btn-download">📁 Télécharger</button>
+      <button onclick="envoyerCleRSAMail()" class="btn-download">📧 Envoyer la clé RSA</button>
     </div>
   </div>
 
   <div class="info-modal" id="infoPanel">
     <div class="info-modal-content">
       <h3>À propos</h3>
-      <p>
-        Ce site permet de tester le chiffrement symétrique (AES) et asymétrique (RSA simplifié).
-      </p>
+      <p>Ce site permet de tester le chiffrement symétrique (AES) et asymétrique (RSA simplifié).</p>
       <button onclick="closeInfo()">Fermer</button>
     </div>
   </div>
 
   <footer>
-    <div class="footer-mail" </class>
     Projet réalisé par <strong>Makhlouf, Macire et Camron</strong><br />
-    📧 <a href="mailto:makhlouf.bouferguene@lycee-jeanrostand.fr">
-      makhlouf.bouferguene@lycee-jeanrostand.fr
-    </a>
+    📧 <a href="mailto:makhlouf.bouferguene@lycee-jeanrostand.fr">makhlouf.bouferguene@lycee-jeanrostand.fr</a>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
   <script src="/js/cle.js"></script>
+  <script src="/app.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/user.js"></script>
+
 </body>
 </html>

@@ -1,14 +1,18 @@
 {
   "name": "cyberworld-cryptage",
   "version": "1.0.0",
-  "description": "Simulateur de cryptage CyberWorld",
-  "main": "index.js",
+  "description": "Simulateur de cryptage CyberWorld avec authentification",
+  "main": "server.js",
   "scripts": {
-    "dev": "node index.js"
+    "dev": "node server.js"
   },
   "author": "Makhlouf",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.1.0"
-  }
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^7.8.7"
+  },
+  "proxy": "http://localhost:5000"
 }

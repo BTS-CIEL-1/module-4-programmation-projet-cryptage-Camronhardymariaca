@@ -74,7 +74,32 @@ function telechargerFichier(elementId, nomFichier) {
   URL.revokeObjectURL(url);
 }
 
-// Info modale
+// Envoi par mail de la clé AES
+function envoyerCleParMail() {
+  const key = document.getElementById("keyAES").value;
+  if (!key) {
+    alert("Merci de saisir une clé pour l'envoyer.");
+    return;
+  }
+  const subject = encodeURIComponent("Clé secrète AES");
+  const body = encodeURIComponent(`Voici la clé secrète AES : ${key}`);
+  window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=&su=${subject}&body=${body}`, "_blank");
+}
+
+// Envoi par mail de la clé RSA (publique + privée)
+function envoyerCleRSAMail() {
+  const pubKey = document.getElementById("clePublique").value;
+  const privKey = document.getElementById("clePrivee").value;
+  if (!pubKey || !privKey) {
+    alert("Merci de générer les clés avant d'envoyer.");
+    return;
+  }
+  const subject = encodeURIComponent("Clés RSA publique et privée");
+  const body = encodeURIComponent(`Clé publique : ${pubKey}\nClé privée : ${privKey}`);
+  window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=&su=${subject}&body=${body}`, "_blank");
+}
+
+// Modale info
 function toggleInfo() {
   document.getElementById("infoPanel").style.display = "flex";
 }
